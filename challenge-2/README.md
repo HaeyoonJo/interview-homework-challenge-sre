@@ -1,11 +1,23 @@
-# Challenge 2: syschekipy Python package
+# Challenge 2: Python package
 
 We need to have a Python package that can be used to get system information. In this document, I will provide a overview for the python package information, usage, and how to run it in a virtual environment.
 
-The package name is `syschekipy` to be friendly and directly understandable and it will provide a CLI interface to check system information such as CPU, RAM, Disk, ports, and overview of top 10 process with most CPU usage.
+The package name is `myscript.py` that provide a CLI interface to check system information such as CPU, RAM, Disk, ports, and overview of top 10 process with most CPU usage.
 
 ## Requirements
-Create a simple Python script that can be used to get system information. The script should provide a comprehensive CLI interface with arguments for each feature.
+Create a simple Python script that can be used to get system information. The script should have the following CLI interface:
+
+```sh
+Usage: myscript.py [options..]
+Myscript description
+
+Myscript options:
+  -d, --disk       check disk stats
+  -c, --cpu        check cpu stats
+  -p, --ports      check listen ports
+  -r, --ram        check ram stats
+  -o, --overview   top 10 process with most CPU usage.
+```
 
 The features to be implemented are:
 - disk stats: volumes, total, used, free, used percentage
@@ -22,7 +34,7 @@ The features to be implemented are:
 ### python virtual env
 - First, create a virtual environment and install the requirements.
 ```bash
-cd challenge-2/syschekipy/
+cd challenge-2/myscript/
 python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
@@ -32,17 +44,16 @@ pip install -r requirements.txt
 
 To run the script, use the following command:
 ```bash
-python3 syscheki.py
+python3 myscript.py
 ```
 Once you run the script, you will see the following output:
 ```bash
-(venv)$ python3 syscheki.py
-usage: syschekipy [-h] [-d] [-c] [-p] [-r] [-o]
+(venv)$ python3 myscript.py
+usage: myscript.py [-d] [-c] [-p] [-r] [-o]
 
-syschekipy description
+Myscript description
 
-optional arguments:
-  -h, --help      show this help message and exit
+Myscript options:
   -d, --disk      check disk stats
   -c, --cpu       check cpu stats
   -p, --ports     check listen ports
@@ -54,7 +65,7 @@ optional arguments:
 
 1. Check Disk stats
 ```bash
-(venv)$ python3 syscheki.py -d
+(venv)$ python3 myscript.py -d
 ```
 output:
 ```bash
@@ -69,7 +80,7 @@ Free Space   40.3 GiB
 
 2. Check CPU stats
 ```bash
-(venv)$ python3 syscheki.py -c
+(venv)$ python3 myscript.py -c
 ```
 output:
 ```bash
@@ -85,10 +96,10 @@ Context Switches   30,000
 
 3. Check Listening Ports
 - Run with `sudo`  
-  To run it with `sudo`: `sudo python3 syscheki.py`. Otherwise, you will get `Permission Denied.` message and requires you to run it with `sudo` to get the listening ports.
+  To run it with `sudo`: `sudo python3 myscript.py`. Otherwise, you will get `Permission Denied.` message and requires you to run it with `sudo` to get the listening ports.
 
 ```bash
-(venv)$ sudo python3 syscheki.py -p
+(venv)$ sudo python3 myscript.py -p
 ```
 output:
 ```bash
@@ -127,11 +138,11 @@ Local
 ```
 
 - Conclusion  
-  The output of the `syschekipy` script is correct and matches the output of the `netstat` command.
+  The output of the `myscript.py` script is correct and matches the output of the `netstat` command.
 
 4. Check RAM stats
 ```bash
-(venv)$ python3 syscheki.py -r
+(venv)$ python3 myscript.py -r
 ```
 output:
 ```bash
@@ -147,7 +158,7 @@ Swap Used  0.00 GB / 0.00 GB
 5. Check Overview
 - The overview will show the top 10 processes with the most CPU usage
 ```bash
-(venv)$ python3 syscheki.py -o
+(venv)$ python3 myscript.py -o
 ```
 output:
 ```bash
@@ -167,7 +178,7 @@ output:
  ```
 
 ## Conclusion
-The `syschekipy` Python package provides a simple and effective way to gather system information. It offers a user-friendly CLI interface that allows users to check disk, CPU, RAM, and listening ports, as well as an overview of the top 10 processes with the most CPU usage.
+The `myscript.py` Python package provides a simple and effective way to gather system information. It offers a user-friendly CLI interface that allows users to check disk, CPU, RAM, and listening ports, as well as an overview of the top 10 processes with the most CPU usage.
 
 The package is simply designed, however, there are many ways to improve it with more features and functionalities. If you have any suggestions or feedback, please feel free to reach out.
 
