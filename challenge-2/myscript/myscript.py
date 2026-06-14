@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-file name:  syscheki.py
+file name:  myscript.py
 Usage:      System information tool
 """
 

@@ -4,7 +4,6 @@ file name: args.py
 """
 import argparse
 import sys
-PROG="syschekipy"
 
 def build_parser():
     """
@@ -12,10 +11,12 @@ def build_parser():
     :return: parser
     """
     parser = argparse.ArgumentParser(
-        prog=PROG,
-        description=f"{PROG} description",
+        prog="myscript.py",
+        description=f"Myscript description",
         formatter_class=argparse.RawTextHelpFormatter,
+        add_help=False
     )
+    parser._optionals.title = "Myscript options"
     parser.add_argument("-d", "--disk",     action="store_true", help="check disk stats")
     parser.add_argument("-c", "--cpu",      action="store_true", help="check cpu stats")
     parser.add_argument("-p", "--ports",    action="store_true", help="check listen ports")
