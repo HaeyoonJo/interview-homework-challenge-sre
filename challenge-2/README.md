@@ -85,10 +85,10 @@ Context Switches   30,000
 
 3. Check Listening Ports
 - Run with `sudo`  
-  To run it with `sudo`: `sudo python3 syscheki.py`. Otherwise, you will get an error message that you need to run it with `sudo` to get the listening ports.
+  To run it with `sudo`: `sudo python3 syscheki.py`. Otherwise, you will get `Permission Denied.` message and requires you to run it with `sudo` to get the listening ports.
 
 ```bash
-(venv)$ python3 syscheki.py -p
+(venv)$ sudo python3 syscheki.py -p
 ```
 output:
 ```bash
@@ -165,3 +165,15 @@ output:
  1528  Test Process7                0.60%    1.15%
   592  Test Process8                0.40%    1.46%
  ```
+
+## Conclusion
+The `syschekipy` Python package provides a simple and effective way to gather system information. It offers a user-friendly CLI interface that allows users to check disk, CPU, RAM, and listening ports, as well as an overview of the top 10 processes with the most CPU usage.
+
+The package is simply designed, however, there are many ways to improve it with more features and functionalities. If you have any suggestions or feedback, please feel free to reach out.
+
+Hope you enjoy using it and find it useful for your system monitoring needs.
+
+To exit the virtual environment, simply run:
+```bash
+deactivate
+```
