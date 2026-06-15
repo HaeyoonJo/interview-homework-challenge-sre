@@ -1,17 +1,5 @@
-# Since we need Local repo, we can skip the repo config and remote.
-
-# This ct.yaml file is equvalnt to the following command:
-# ct install --chart-dirs . --charts server-chart --helm-extra-args "--timeout 600s"
-# For more details, please refer to 
-# - https://github.com/helm/chart-testing#configuration
-# - https://github.com/helm/charts-repo-actions-demo/blob/main/ct.yaml
-
-# remote: origin
-# target-branch: main
 chart-dirs:
   - ../challenge-5/
 charts:
   - ../challenge-5/server-chart/
-# chart-repos:
-#   - bitnami=https://charts.bitnami.com/bitnami
 helm-extra-args: --timeout 600s
