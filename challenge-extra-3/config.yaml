@@ -1,0 +1,5 @@
+chart-dirs:
+  - ../challenge-5/
+charts:
+  - ../challenge-5/server-chart/
+helm-extra-args: --timeout 600s
